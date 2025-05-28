@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lulus!</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Tambahan agar canvas petasan tampil penuh dan di belakang */
+    #fireworks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas untuk petasan -->
+  <canvas id="fireworks"></canvas>
+
+  <div class="card-message">
+    <h1>🎉 Congratulations, Graduate!</h1>
+    <p>
+      heyyo kurcaci kecill, pertama bani ucapin selamatt yaa, yang kedua maaff gak sempat beli bucket , jadi bani bikin ini ajadeh hehehe.<br />
+      yang ketiga bani doakan semoga kedepannya kamu bisa mencapai cita cita kamu, impian kamu masi mau jadi dokter kan? kalo masi, kamu kejar terus impian kamu yaa, jangan pernah berhenti bermimpi setinggi tingginya, semangatt alfathin aqilla
+    </p>
+    <audio id="bg-music" autoplay muted loop>
+        <source src="kita.mp3.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <div class="slide">
+    <button class="nav left" onclick="prevSlide()">&#10094;</button>
+    <div class="slides">
+      <img src="qilla4.jpg" alt="Slide" width="300" height="300" />
+      <img src="qilla.jpg" alt="Slide" width="300" height="300" />
+      <img src="qilla2.jpg" alt="Slide" width="300" height="300" />
+      <img src="qilla3.jpg" alt="Slide" width="300" height="300" />
+      <img src="qilla5.jpg" alt="Slide" width="300" height="300" />
+    </div>
+
+    <div class="flower-bed">
+      <div class="flower-bloom flower1"></div>
+      <div class="flower-bloom flower2"></div>
+      <div class="flower-bloom flower3"></div>
+      <div class="flower-bloom flower4"></div>
+    </div>
+
+    <button class="nav right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

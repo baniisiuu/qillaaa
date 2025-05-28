@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* Gradasi dinamis */
+  background: linear-gradient(-45deg, #f0f8ff, #e6e6fa, #d8bfd8, #b0e0e6);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animasi background gradasi */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Amplop */
+.envelope-container {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  animation: popIn 1s ease;
+}
+
+.envelope {
+  width: 250px;
+  height: 125px;
+  background: white;
+  border: 2px solid #999;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+.envelope .flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: #999;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.envelope .letter {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Kartu pesan */
+.card-message {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1s ease;
+  max-width: 700px;
+  z-index: 2;
+  position: relative;
+}
+
+.card-message h1 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  color: #4b0082;
+}
+
+.card-message p {
+  font-size: 1.25em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Slider */
+.slider, .slide {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  overflow: hidden;
+  margin: 2rem auto 4rem auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: #fff;
+  z-index: 2;
+}
+
+.slides {
+  display: flex;
+  gap: 48px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 225px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 0 15px rgba(75, 0, 130, 0.7));
+  border-radius: 10px;
+}
+
+.slides img:hover {
+  transform: scale(1.05);
+  z-index: 5;
+  filter: drop-shadow(0 0 25px rgba(75, 0, 130, 1));
+}
+
+/* Tombol navigasi */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 3;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b0082;
+  transition: background 0.3s;
+}
+
+.nav:hover {
+  background: #4b0082;
+  color: #fff;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+/* Animasi umum */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Bunga animasi */
+.flower-bed {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.flower-bloom {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at center, #ff69b4 60%, transparent 70%);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: bloomGrow 2s forwards ease-out;
+  animation-delay: 1s;
+  box-shadow: 0 0 8px #ff69b4aa;
+}
+
+/* Variasi bunga */
+.flower1 {
+  background: radial-gradient(circle at center, #ff69b4 60%, transparent 70%);
+  animation-delay: 1s;
+}
+
+.flower2 {
+  background: radial-gradient(circle at center, #ff1493 60%, transparent 70%);
+  animation-delay: 1.3s;
+}
+
+.flower3 {
+  background: radial-gradient(circle at center, #ffb6c1 60%, transparent 70%);
+  animation-delay: 1.6s;
+}
+
+.flower4 {
+  background: radial-gradient(circle at center, #db7093 60%, transparent 70%);
+  animation-delay: 1.9s;
+}
+
+@keyframes bloomGrow {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Fireworks canvas */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent !important; /* pastikan tidak hitam */
+}
